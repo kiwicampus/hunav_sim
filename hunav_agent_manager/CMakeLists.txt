@@ -14,6 +14,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(visualization_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 find_package(nav2_behavior_tree REQUIRED)
 find_package(behaviortree_cpp_v3 REQUIRED)
 
@@ -28,7 +29,7 @@ ament_target_dependencies(hunav_agent_manager rclcpp hunav_msgs people_msgs geom
 
 
 add_executable(test_agent_manager src/test_agent_manager_node.cpp)
-ament_target_dependencies(test_agent_manager rclcpp hunav_msgs geometry_msgs tf2 tf2_ros)
+ament_target_dependencies(test_agent_manager rclcpp hunav_msgs geometry_msgs tf2 tf2_ros tf2_geometry_msgs)
 
 add_executable(hunav_loader src/hunav_loader.cpp)
 ament_target_dependencies(hunav_loader rclcpp hunav_msgs)

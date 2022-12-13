@@ -784,7 +784,7 @@ namespace hunav_rviz2_panel
     arrow_marker.color.b = rgb[blue];
     arrow_marker.color.a = 1.0f;
 
-    arrow_marker.lifetime = rclcpp::Duration(0);
+    arrow_marker.lifetime = rclcpp::Duration::from_seconds(0);
     arrow_marker.frame_locked = false;
     
     return arrow_marker;

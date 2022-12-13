@@ -2,9 +2,9 @@
 #include "hunav_msgs/msg/agent.hpp"
 #include "hunav_msgs/msg/agents.hpp"
 #include "rclcpp/rclcpp.hpp"
+#include "tf2_geometry_msgs/tf2_geometry_msgs.hpp"
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <tf2/LinearMath/Quaternion.h>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 //#include "hunav_msgs/srv/is_robot_visible.hpp"
 #include "hunav_msgs/srv/compute_agents.hpp"
 
@@ -122,8 +122,7 @@ int main(int argc, char *argv[]) {
   rclcpp::Client<hunav_msgs::srv::ComputeAgents>::SharedPtr client =
       node->create_client<hunav_msgs::srv::ComputeAgents>("compute_agents");
 
-  auto request =
-      std::make_shared<hunav_msgs::srv::ComputeAgents::Request>();
+  auto request = std::make_shared<hunav_msgs::srv::ComputeAgents::Request>();
 
   hunav_msgs::msg::Agent robot = fillInitialRobot();
   hunav_msgs::msg::Agents agents = fillInitialAgents();

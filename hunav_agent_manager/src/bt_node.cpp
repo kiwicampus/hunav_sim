@@ -207,11 +207,6 @@ void BTnode::initializeBehaviorTree(hunav_msgs::msg::Agents agents) {
     // // This logger stores the execution time of each node
     // BT::MinitraceLogger logger_minitrace(tree, (filename + ".json").c_str());
 
-#ifdef ZMQ_FOUND
-    // This logger publish status changes using ZeroMQ. Used by Groot
-    PublisherZMQ publisher_zmq(tree);
-#endif
-
     // root_->addChild(trees_[trees_.size() - 1].rootNode());
     // BT::printTreeRecursively(root_.get());
     BT::printTreeRecursively(trees_[agents.agents[i].id].rootNode());
